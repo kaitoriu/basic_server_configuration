@@ -51,6 +51,7 @@ apabila storage server menggunakan sistem LVM maka gunakan seluruh storage LVM u
 df -h
 # Lihat bagian dev/mapper/ubuntu--vg-ubuntu--lv
 
+# apabila storage belum digunakan semua maka resize storage LVM
 lvm
 lvm> lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 lvm> exit
