@@ -33,8 +33,17 @@ network:
 netplan apply
 ```
 # Mengubah timezone
+cek dahulu timezone server sekarang:
+```sh
+timedatectl
 
-
+#cari daftar timezone yang tersedia
+timedatectl list-timezones
+```
+ubah timezone sesuai dengan daftar yang tersedia
+```sh
+sudo timedatectl set-timezone Asia/Jakarta
+```
 # Reboot Server
 jangan lupa reboot server untuk memastikan pengaturan terbaru terpasang
 ```sh
