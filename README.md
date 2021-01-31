@@ -44,6 +44,18 @@ ubah timezone sesuai dengan daftar yang tersedia
 ```sh
 sudo timedatectl set-timezone Asia/Jakarta
 ```
+# Resize LVM
+apabila storage server menggunakan sistem LVM maka gunakan seluruh storage LVM untuk penggunaan server
+```sh
+# Periksa apakah storage sudah terpakai semua
+df -h
+# Lihat bagian dev/mapper/ubuntu--vg-ubuntu--lv
+
+lvm
+lvm> lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+lvm> exit
+resize2fs /dev/ubuntu-vg/ubuntu-lv
+```
 # Reboot Server
 jangan lupa reboot server untuk memastikan pengaturan terbaru terpasang
 ```sh
